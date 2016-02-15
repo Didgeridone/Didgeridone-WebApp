@@ -41,4 +41,9 @@ header {
   text-align: center;
   padding-top: 130px; }
 
+.tasksBox {
+  width: 60%;
+  height: 100%;
+  margin: auto; }
+
 /*# sourceMappingURL=style.css.map */

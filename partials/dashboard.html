@@ -3,7 +3,9 @@
 </header>
 <div class="tasksBackground">
 	<h1 class=tasksTitle>Tasks</h1>
-
+<div class="tasksBox">
+<button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+<!-- ng-repeat tasks list -->
   <uib-accordion close-others="oneAtATime">
     
     <uib-accordion-group heading="Task 1">
@@ -13,17 +15,9 @@
     </uib-accordion-group>
      <uib-accordion close-others="oneAtATime">
     
-    <uib-accordion-group heading="Task 2">
-      <p>On click, the tasks will open up here</p>
-      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-      <div ng-repeat="item in items">{{item}}</div>
+   <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+      {{group.content}}
     </uib-accordion-group>
-     <uib-accordion close-others="oneAtATime">
-    
-    <uib-accordion-group heading="Task 3">
-      <p>On click, the tasks will open up here</p>
-      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-      <div ng-repeat="item in items">{{item}}</div>
-    </uib-accordion-group>
+    </div>
 </div>
 
