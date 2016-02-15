@@ -7,9 +7,13 @@ header {
   height: 120px;
   width: 100%; }
   header .signIn {
+    background-color: #FFD5B0;
     float: right;
     margin-top: 35px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px; }
 
 .homeBackground {
   background-color: black;

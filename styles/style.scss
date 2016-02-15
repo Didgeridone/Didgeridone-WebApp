@@ -15,9 +15,13 @@ header {
 	height: 120px;
 	width: 100%;
 	.signIn {
+		background-color: $titleColor;
 		float: right;
 		margin-top: 35px;
 		border-radius: 30px;
+		color: black;
+		font-weight: bolder;
+		font-size: 20px;
 	}
 }
 
