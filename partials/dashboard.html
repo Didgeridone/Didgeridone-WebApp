@@ -1,0 +1,29 @@
+
+<header>
+</header>
+<div class="tasksBackground">
+	<h1 class=tasksTitle>Tasks</h1>
+
+  <uib-accordion close-others="oneAtATime">
+    
+    <uib-accordion-group heading="Task 1">
+      <p>On click, the tasks will open up here</p>
+      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+      <div ng-repeat="item in items">{{item}}</div>
+    </uib-accordion-group>
+     <uib-accordion close-others="oneAtATime">
+    
+    <uib-accordion-group heading="Task 2">
+      <p>On click, the tasks will open up here</p>
+      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+      <div ng-repeat="item in items">{{item}}</div>
+    </uib-accordion-group>
+     <uib-accordion close-others="oneAtATime">
+    
+    <uib-accordion-group heading="Task 3">
+      <p>On click, the tasks will open up here</p>
+      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+      <div ng-repeat="item in items">{{item}}</div>
+    </uib-accordion-group>
+</div>
+
