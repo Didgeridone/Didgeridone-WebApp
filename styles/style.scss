@@ -1,3 +1,44 @@
-p {
-	color: blue;
+$titleColor: #FFD5B0;
+$bodyBackground: black;
+$headerBackground: #532A0F;
+//Home View
+
+
+h1 {
+	color: $titleColor;
+	margin: auto;
+}
+
+//Home View Header
+header {
+	background-color: $headerBackground;
+	height: 120px;
+	width: 100%;
+	.signIn {
+		float: right;
+		margin-top: 35px;
+		border-radius: 30px;
+	}
+}
+
+.homeBackground {
+	background-color: $bodyBackground;
+	width: 100%;
+	height: 1000px;
+	text-align: center;
+	padding-top: 130px;
+	.centerAction{
+		width: 100%;
+		height: 500px;
+		border: 2px solid $headerBackground;
+	}
+	.actionButton {
+		height: 150px;
+		width: 300px;
+		border-radius: 20px;
+		background-color: $titleColor;
+		margin-top: 100px;
+		font-weight: bolder;
+		font-size: 24px;
+	}
 }
