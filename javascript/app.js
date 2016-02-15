@@ -1,4 +1,4 @@
-var app = angular.module('didjApp', ['ngRoute']);
+var app = angular.module('didjApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider) {
   $routeProvider

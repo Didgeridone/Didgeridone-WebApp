@@ -7,9 +7,13 @@ header {
   height: 120px;
   width: 100%; }
   header .signIn {
+    background-color: #FFD5B0;
     float: right;
     margin-top: 35px;
-    border-radius: 30px; }
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px; }
 
 .homeBackground {
   background-color: black;
@@ -29,5 +33,12 @@ header {
     margin-top: 100px;
     font-weight: bolder;
     font-size: 24px; }
+
+.tasksBackground {
+  background-color: black;
+  width: 100%;
+  height: 1000px;
+  text-align: center;
+  padding-top: 130px; }
 
 /*# sourceMappingURL=style.css.map */
