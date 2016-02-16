@@ -6,7 +6,7 @@ app.controller('HomeController', function($scope) {
 app.controller('DashboardController', function($scope, $http) {
     $http({
         method: 'GET',
-        url: ' https://didgeridone.herokuapp.com/task/56c252022afa221bdcaabcb5',
+        url: 'https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603',
         headers: {
             'Accept': 'application/json, text/javascript, /; q=0.01',
             'Content-Type': 'application/json; charset=utf-8',
@@ -51,7 +51,7 @@ app.controller('DashboardController', function($scope, $http) {
     }
       $scope.postTask = function() {
         $http({
-              url: 'https://didgeridone.herokuapp.com/task/56c252022afa221bdcaabcb5',
+              url: 'https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603',
               method: "POST",
               data: JSON.stringify($scope.taskObject),
               headers: {
