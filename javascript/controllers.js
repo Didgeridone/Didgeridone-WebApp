@@ -1,6 +1,8 @@
 app.controller('HomeController', function($scope) {
     $scope.title = "Didgeridone"
 })
+
+
 app.controller('DashboardController', function($scope, $http) {
     $http({
         method: 'GET',
@@ -10,13 +12,13 @@ app.controller('DashboardController', function($scope, $http) {
             'Content-Type': 'application/json; charset=utf-8',
         }
     }).success(function(data, status) {
-        console.log(data)
-        console.log(data[0].tasks[0].name)
+        // console.log(data)
+        // console.log(data[0].tasks[0].name)
         $scope.groups = []
         for(i = 0; i < data[0].tasks.length; i++) {
-            $scope.groups.push(data[0].tasks[i])            
+            $scope.groups.push(data[0].tasks[i])
     	}
-    	console.log($scope.groups)
+    	// console.log($scope.groups)
             // $scope.status = status;
             // $scope.breeds = [];
             // for (i = 0; i < breedData.list.length; i++) {
@@ -38,7 +40,7 @@ app.controller('DashboardController', function($scope, $http) {
         $scope.status = status;
     });
 });
-//       $scope.postTask = function() {   
+//       $scope.postTask = function() {
 //       	$http({
 //               url: ' https://didgeridone.herokuapp.com/task/56c252022afa221bdcaabcb5',
 //               method: "POST",
@@ -55,7 +57,7 @@ app.controller('DashboardController', function($scope, $http) {
 //               console.log(foodData.name)
 //               console.log(foodData.query)
 //               console.log(foodData)
-//                   // $scope. = data; // assign  $scope.persons here as promise is resolved here 
+//                   // $scope. = data; // assign  $scope.persons here as promise is resolved here
 //           }).error(function(foodData, status, headers, config) {
 //               // need to create form validation controller if query is empty
 //               if($scope.food.name == '' || $scope.foodType.name == ''){
