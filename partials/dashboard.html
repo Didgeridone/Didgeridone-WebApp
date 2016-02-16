@@ -28,24 +28,21 @@
                 </uib-accordion-group>
             </div>
             <div ng-click="addTask=!addTask">
-                <span id="addTask" class="glyphicon glyphicon-plus">
-                    {{post.comments.length}}
-                    <ng-pluralize count="post.comments.length"
-                        when="{'0': 'No comments.','1': 'Comment','2': 'Comments','other': 'Comments'}">
-                    </ng-pluralize>
+                <span id="addTask" class="glyphicon glyphicon-plus"></span>
+
                 </div>
                 <section id="addTask" ng-show="addTask">
                     <form name="addtaskForm">
-                        <label for="addTask">
-                        </label>
-                        <div ng-repeat="comment in post.comments" >
-                            {{comment}}
-                        </div>
                         <label for="taskName">Task Name</label>
-                        <input type="text" ng-model="groups.taskName"></input>
-                        <textarea ng-model="post.newcomment" cols="60">
-                        </textarea>
-                        <button type="submit" class="btn btn-sm btn-default" ng-click="submitTask($index)">
+                        <input type="text" ng-model="taskObject.name" name="taskName"></input><br />
+                        <label for="enterTag">On Entry (blank for On Exit)</label><input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
+                        <label>Distance<radiogroup ng-model="taskObject.radius">
+                          <label>1<input type="radio" selected name="distance" value="1"/></label>
+                          <label>5<input type="radio" name="distance" value="5"/></label>
+                          <label>10<input type="radio" name="distance" value="10"/></label>
+                          <label>15<input type="radio" name="distance"value="15"/></label>
+                        </radiogroup></label>
+                        <button type="submit" class="btn btn-sm btn-default" ng-click="addTask()">
                             Submit Task
                         </button>
                     </form>
