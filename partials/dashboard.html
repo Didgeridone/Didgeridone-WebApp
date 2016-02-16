@@ -24,13 +24,13 @@
                 </uib-accordion-group>
             -->
             <uib-accordion close-others="oneAtATime">
-                <uib-accordion-group heading="{{group}}" ng-repeat="group in groups">
-                <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask()">Delete Task</button>
-                    <!--
+                <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data">
+                <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
+
                         <li>
-                            {{radius}}
+                            {{datem.task_id}}
                         </li>
-                    -->
+
                 </uib-accordion-group>
             </div>
             <div ng-click="addTask=!addTask">
