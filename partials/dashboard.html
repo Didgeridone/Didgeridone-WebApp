@@ -10,24 +10,31 @@
         </button>
         <!-- ng-repeat tasks list -->
         <uib-accordion close-others="oneAtATime">
-           <!--  <uib-accordion-group heading="Test">
-                <p>
-                    On click, the tasks will open up here
-                </p>
-                <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">
-                    Add Item
-                </button>
-                <div ng-repeat="item in items">
-                    {{item}}
-                </div>
-            </uib-accordion-group> -->
+            <!--
+                <uib-accordion-group heading="Test">
+                    <p>
+                        On click, the tasks will open up here
+                    </p>
+                    <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">
+                        Add Item
+                    </button>
+                    <div ng-repeat="item in items">
+                        {{item}}
+                    </div>
+                </uib-accordion-group>
+            -->
             <uib-accordion close-others="oneAtATime">
                 <uib-accordion-group heading="{{group}}" ng-repeat="group in groups">
-                    <li>{{radius}}</li>
-
+                <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask()">Delete Task</button>
+                    <!--
+                        <li>
+                            {{radius}}
+                        </li>
+                    -->
                 </uib-accordion-group>
             </div>
             <div ng-click="addTask=!addTask">
+
                 <span id="addTask" class="glyphicon glyphicon-plus"></span>
 
                 </div>
