@@ -1,6 +1,6 @@
-$titleColor: #FFD5B0;
-$bodyBackground: black;
-$headerBackground: #532A0F;
+$titleColor: white;
+$bodyBackground: white;
+$headerBackground: white;
 //Home View
 
 
@@ -54,7 +54,7 @@ header {
 //Tasks
 
 
-.tasksBackground { @include 
+.tasksBackground { @include
 	backgroundColors;
 }
 
@@ -63,15 +63,3 @@ header {
 	height: 100%;
 	margin: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
