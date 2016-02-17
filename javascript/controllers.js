@@ -53,10 +53,7 @@ app.controller('DashboardController', function($scope, $http) {
     $scope.deleteTask = function(task_id) {
         console.log(task_id)
                 $http.delete('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + task_id).success(function(data, status, headers) {
-<<<<<<< HEAD
-=======
                     $scope.groups.splice(task_id-1, 1)
->>>>>>> d7b3179c8d1887ff669cbbfbe1f2ec9181d35b6f
                 }).error(function(data, status, header, config) {
                   console.error('YOU SUCK')
                 })
