@@ -2,6 +2,16 @@ app.controller('HomeController', function($scope) {
     $scope.title = "Didgeridone"
 })
 app.controller('DashboardController', function($scope, $http) {
+
+  $scope.checkRadius = function(){
+    if(this.radius===this.value){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
     $http({
         method: 'GET',
         url: ' https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
