@@ -29,10 +29,11 @@ app.controller('DashboardController', function($scope, $http) {
     }).error(function(data, status) {
         console.log(status)
     });
-    $scope.deleteTask = function(task_id) {
-        console.log(task_id)
-                $http.delete('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + task_id).success(function(data, status, headers) {
-                    $scope.groups.splice(task_id-1, 1)
+    $scope.deleteTask = function(datem) {
+        console.log(datem.task_id)
+                $http.delete('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + datem.task_id).success(function(data, status, headers) {
+                  var taskIndex = $scope.data.indexOf(datem)
+                    $scope.data.splice(taskIndex, 1)
                 }).error(function(data, status, header, config) {
                   console.error('YOU SUCK')
                 })
@@ -52,10 +53,10 @@ app.controller('DashboardController', function($scope, $http) {
         done: false,
         enter: true
     }
-    $scope.addTask = function() {
+    $scope.addTask = function(ObjectID) {
+        $scope.taskObject.task_id=ObjectID
         console.log($scope.taskObject)
         $scope.data.push($scope.taskObject);
-        $scope.postTask()
     }
     $scope.postTask = function() {
         $http({
@@ -66,13 +67,16 @@ app.controller('DashboardController', function($scope, $http) {
                   'Content-Type': 'application/json',
               }
           }).success(function(data, status, headers, config) {
-           console.log(data)
+           $scope.addTask(data.new_task.task_id)
+          console.log(data.new_task)
          }).error(function(data, status, headers, config) {
               // need to create form validation controller if query is empty
               console.log(status)
               })
       }
-      $scope.addBoolean = false;
+
+    $scope.addBoolean = false;
+
     $scope.toggleAdd = function(){
       if($scope.addBoolean==false){
         $scope.addBoolean=true;
