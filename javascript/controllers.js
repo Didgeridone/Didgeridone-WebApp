@@ -98,4 +98,13 @@ app.controller('DashboardController', function($scope, $http) {
     $scope.toggleEdit = function () {
         $scope.editBoolean = !$scope.editBoolean;
     };
+    $scope.blurTest = function (){
+      console.log('working blur')
+    }
 });
+
+
+
+
+
+
