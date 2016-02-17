@@ -7,16 +7,22 @@
     <input placeholder="search" ng-model="search.text" />
 
     <div class="tasksBox">
-            <uib-accordion close-others="oneAtATime">
-                <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
-                <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
-
-                        <li>
-                            {{datem.task_id}}
-                        </li>
-
-                </uib-accordion-group>
-            </div>
+      <uib-accordion close-others="oneAtATime">
+          <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
+          <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
+            <form>
+              <radiogroup>
+                <label>1<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="1"/></label>
+                <label>5<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="5"/></label>
+                <label>10<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="10"/></label>
+                <label>15<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="15"/></label></radiogroup>
+              </li>
+              <label>
+                Done: <input type="radio" ng-selected="datem.done" />
+              </label>
+            </form>
+          </uib-accordion-group>
+    </div>
             <div ng-click="">
 
                 <span id="addTask" class="glyphicon glyphicon-plus"></span>
