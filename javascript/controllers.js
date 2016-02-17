@@ -3,6 +3,7 @@ app.controller('HomeController', function($scope) {
 })
 app.controller('DashboardController', function($scope, $http) {
 
+
   $scope.checkRadius = function(){
     if(this.radius===this.value){
       return true
@@ -70,7 +71,13 @@ app.controller('DashboardController', function($scope, $http) {
               // need to create form validation controller if query is empty
               console.log(status)
               })
-
-                  // $scope.status = status + ' ' + headers;
       }
+      $scope.addBoolean = false;
+    $scope.toggleAdd = function(){
+      if($scope.addBoolean==false){
+        $scope.addBoolean=true;
+      } else {
+        $scope.addBoolean=false;
+      }
+    }
 });
