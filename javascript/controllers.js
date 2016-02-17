@@ -3,7 +3,18 @@ app.controller('HomeController', function($scope) {
 })
 app.controller('DashboardController', function($scope, $http) {
 
+  $scope.getLocation = function(){
+    navigator.geolocation.getCurrentPosition(function(position) {
 
+        if($scope.taskObject.lat){
+          $scope.taskObject.lat = "";
+          $scope.taskObject.long = "";
+        }
+        console.log(position.coords.latitude, position.coords.longitude);
+        $scope.taskObject.lat = position.coords.latitude;
+        $scope.taskObject.long = position.coords.longitude;
+    });
+  }
   $scope.editmode = false;
   $scope.toggleEditMode = function(){
     $scope.editmode = $scope.editmode === false ? true: false;
@@ -74,9 +85,25 @@ app.controller('DashboardController', function($scope, $http) {
           }).success(function(data, status, headers, config) {
            $scope.addTask(data.new_task.task_id)
           console.log(data.new_task)
+          $scope.taskObject = {
+              name: "",
+              lat: "lat",
+              long: "long",
+              radius: 10,
+              done: false,
+              enter: true
+          }
          }).error(function(data, status, headers, config) {
               // need to create form validation controller if query is empty
               console.log(status)
+              $scope.taskObject = {
+                  name: "",
+                  lat: "lat",
+                  long: "long",
+                  radius: 10,
+                  done: false,
+                  enter: true
+              }
               })
       }
 
