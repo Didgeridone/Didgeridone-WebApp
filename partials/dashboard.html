@@ -34,6 +34,7 @@
                 <label>10<input type="radio" name="distance" value="10"/></label>
                 <label>15<input type="radio" name="distance"value="15"/></label>
               </radiogroup></label>
+              <label><input type="checkbox" ng-click="getLocation()">Use Current Location</label>
               <button type="submit" class="btn btn-sm btn-default" ng-click="postTask()">
                   Submit Task
               </button>
@@ -46,7 +47,7 @@
           <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default">Edit Task</button>
           <div ng-show="editBoolean" class="editBox">
             <form>
-              <!-- <input ng-model="datem.name" ng-blur="updateTask(datem)"/> -->
+
               <select ng-change="updateTask(datem)" ng-model="datem.enter">
                 <option selected='selected' ng-value="false" selected>
                   Exit
