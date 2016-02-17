@@ -80,6 +80,9 @@ svg {
 	height: 100%;
 	margin: auto;
 		font-family: $font;
+	h3:focus {
+		outline: none;
+	}
 }
 
 .editBox {

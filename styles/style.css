@@ -59,6 +59,8 @@ svg {
   height: 100%;
   margin: auto;
   font-family: "Raleway", sans-serif; }
+  .tasksBox h3:focus {
+    outline: none; }
 
 .editBox {
   margin: 25px; }
