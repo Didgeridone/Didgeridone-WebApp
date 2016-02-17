@@ -75,7 +75,7 @@ app.controller('DashboardController', function($scope, $http) {
     }
     $scope.addTask = function() {
         console.log($scope.taskObject)
-        $scope.groups.push($scope.taskObject.name);
+        $scope.data.push($scope.taskObject);
         $scope.postTask()
     }
     $scope.postTask = function() {
