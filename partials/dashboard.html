@@ -38,18 +38,29 @@
               </button>
           </form>
       </section>
+
         <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
         <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
           <form>
+            <input ng-model="datem.name" />
+            <select ng-model="datem.enter">
+              <option ng-value="false">
+                Exit
+              </option>
+              <option ng-value="true">
+                Enter
+              </option>
+            </select>
             <radiogroup>
-              <label>1<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="1"/></label>
-              <label>5<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="5"/></label>
-              <label>10<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="10"/></label>
-              <label>15<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="15"/></label></radiogroup>
+              <label>1<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="1" ng-model="datem.radius"/></label>
+              <label>5<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="5" ng-model="datem.radius"/></label>
+              <label>10<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="10" ng-model="datem.radius"/></label>
+              <label>15<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="15" ng-model="datem.radius"/></label></radiogroup>
             </li>
             <label>
-              Done: <input type="radio" ng-selected="datem.done" />
+              Done: <input type="checkbox" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
             </label>
+            <button ng-click="updateTask(datem)">Update Task</button>
           </form>
         </uib-accordion-group>
   </div>

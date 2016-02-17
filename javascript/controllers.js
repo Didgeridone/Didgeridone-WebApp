@@ -38,8 +38,16 @@ app.controller('DashboardController', function($scope, $http) {
                   console.error('YOU SUCK')
                 })
     }
-    $scope.updateTask = function() {
-        $http.put('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/').success(function(response, status, headers, config) {
+    $scope.updateTask = function(datem) {
+      console.log(datem)
+        $http({
+          url: 'https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + datem.task_id,
+          method: "PUT",
+          data: angular.toJson(datem),
+          headers: {
+              'Content-Type': 'application/json',
+          }
+      }).success(function(response, status, headers, config) {
             console.log(response)
         }).error(function(response, status, headers, config) {
             $scope.error_message = response.error_message;
