@@ -41,7 +41,7 @@
       </section>
 
         <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
-          <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" value="datem.name" >{{datem.name}}</h3>
+          <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
           <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
           <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default">Edit Task</button>
           <div ng-show="editBoolean" class="editBox">
