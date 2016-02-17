@@ -4,27 +4,11 @@
     <h1 class=tasksTitle>
         Tasks
     </h1>
+    <input placeholder="search" ng-model="search.text" />
+
     <div class="tasksBox">
-        <button type="button" class="btn btn-default btn-sm" ng-click="">
-            Add Item
-        </button>
-        <!-- ng-repeat tasks list -->
-        <uib-accordion close-others="oneAtATime">
-            <!--
-                <uib-accordion-group heading="Test">
-                    <p>
-                        On click, the tasks will open up here
-                    </p>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">
-                        Add Item
-                    </button>
-                    <div ng-repeat="item in items">
-                        {{item}}
-                    </div>
-                </uib-accordion-group>
-            -->
             <uib-accordion close-others="oneAtATime">
-                <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data">
+                <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
                 <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
 
                         <li>
@@ -33,7 +17,7 @@
 
                 </uib-accordion-group>
             </div>
-            <div ng-click="addTask=!addTask">
+            <div ng-click="">
 
                 <span id="addTask" class="glyphicon glyphicon-plus"></span>
 
