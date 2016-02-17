@@ -6,13 +6,13 @@ h1 {
 
 header {
   background-color: khaki;
-  height: 120px;
+  height: 100px;
   width: 100%;
   text-align: center; }
   header .signIn {
-    background-color: black;
+    background-color: white;
     float: right;
-    margin-top: 35px;
+    margin: 20px;
     border-radius: 30px;
     color: black;
     font-weight: bolder;
@@ -23,16 +23,17 @@ header {
   width: 100%;
   height: 1000px;
   text-align: center;
-  padding-top: 130px; }
+  padding-top: 50px; }
   .homeBackground .centerAction {
     width: 100%;
     height: 500px;
-    border: 2px solid khaki; }
+    border: 2px solid khaki;
+    text-align: center; }
   .homeBackground .actionButton {
     height: 150px;
     width: 300px;
     border-radius: 20px;
-    background-color: black;
+    background-color: khaki;
     margin-top: 100px;
     font-weight: bolder;
     font-size: 24px; }
@@ -42,7 +43,7 @@ header {
   width: 100%;
   height: 1000px;
   text-align: center;
-  padding-top: 130px; }
+  padding-top: 50px; }
 
 svg {
   margin: 15px; }
@@ -58,6 +59,8 @@ svg {
   height: 100%;
   margin: auto;
   font-family: "Raleway", sans-serif; }
+  .tasksBox h3:focus {
+    outline: none; }
 
 .editBox {
   margin: 25px; }

@@ -4,15 +4,11 @@ app.controller('HomeController', function($scope) {
 app.controller('DashboardController', function($scope, $http) {
 
 
-  $scope.checkRadius = function(){
-    if(this.radius===this.value){
-      return true
-    }
-    else {
-      return false
-    }
-  }
-
+  $scope.editmode = false;
+  $scope.toggleEditMode = function(){
+    $scope.editmode = $scope.editmode === false ? true: false;
+   }
+   
     $http({
         method: 'GET',
         url: ' https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
@@ -102,9 +98,3 @@ app.controller('DashboardController', function($scope, $http) {
       console.log('working blur')
     }
 });
-
-
-
-
-
-
