@@ -33,13 +33,13 @@
                 <label>10<input type="radio" name="distance" value="10"/></label>
                 <label>15<input type="radio" name="distance"value="15"/></label>
               </radiogroup></label>
-              <button type="submit" class="btn btn-sm btn-default" ng-click="addTask()">
+              <button type="submit" class="btn btn-sm btn-default" ng-click="postTask()">
                   Submit Task
               </button>
           </form>
       </section>
         <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
-        <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
           <form>
             <radiogroup>
               <label>1<input type="radio" ng-selected="checkRadius()" name="distance" ng-value="1"/></label>
