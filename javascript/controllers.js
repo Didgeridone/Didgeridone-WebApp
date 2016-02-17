@@ -8,7 +8,7 @@ app.controller('DashboardController', function($scope, $http) {
   $scope.toggleEditMode = function(){
     $scope.editmode = $scope.editmode === false ? true: false;
    }
-   
+
     $http({
         method: 'GET',
         url: ' https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
@@ -36,6 +36,7 @@ app.controller('DashboardController', function($scope, $http) {
     }
     $scope.updateTask = function(datem) {
       console.log(datem)
+
         $http({
           url: 'https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + datem.task_id,
           method: "PUT",
