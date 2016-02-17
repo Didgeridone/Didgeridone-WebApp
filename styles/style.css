@@ -44,10 +44,28 @@ header {
   text-align: center;
   padding-top: 130px; }
 
+svg {
+  margin: 15px; }
+
+.addtaskBox {
+  margin-bottom: 30px; }
+
+.taskName {
+  margin: 20px; }
+
 .tasksBox {
   width: 60%;
   height: 100%;
   margin: auto;
   font-family: "Raleway", sans-serif; }
+
+.editBox {
+  margin: 25px; }
+
+.trashCan {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-left: 20px; }
 
 /*# sourceMappingURL=style.css.map */
