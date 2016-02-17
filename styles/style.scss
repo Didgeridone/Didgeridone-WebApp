@@ -5,6 +5,13 @@ $headerBackground: white;
 //Home View
 $font: 'Raleway', sans-serif;
 
+body {
+  font-family: 'Lato', sans-serif;;
+}
+
+a, a:visited {
+	text-decoration: none;
+}
 h1 {
 	color: $titleColor;
 	margin: auto;
@@ -59,12 +66,14 @@ header {
 	}
 
 h3 {
+	font-size: 30px;
 	color: white;
 	position: absolute;
 	left: 20px;
 	top: 525px;
 	letter-spacing: 1px;
-	text-shadow: 2px 2px black;
+	font-weight: 700;
+	text-shadow: 2px 2px grey;
 }
 }
 
@@ -78,10 +87,10 @@ h3 {
 		text-align: center;
 	}
 	.actionButton {
-		height: 150px;
-		width: 300px;
-		border-radius: 20px;
-		background-color: $headerBackground;
+		height: 100px;
+		width: 200px;
+		border-radius: 10px;
+		background-color: grey;
 		margin-top: 100px;
 		font-weight: bolder;
 		font-size: 24px;

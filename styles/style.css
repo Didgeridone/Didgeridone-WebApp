@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  font-family: 'Lato', sans-serif; }
+
+a, a:visited {
+  text-decoration: none; }
+
 h1 {
   color: black;
   margin: auto;
@@ -37,12 +43,14 @@ header {
     width: 100vw;
     height: 80vh; }
   .heroImg h3 {
+    font-size: 30px;
     color: white;
     position: absolute;
     left: 20px;
     top: 525px;
     letter-spacing: 1px;
-    text-shadow: 2px 2px black; }
+    font-weight: 700;
+    text-shadow: 2px 2px grey; }
 
 .homeBackground {
   background-color: white;
@@ -55,10 +63,10 @@ header {
     border: 2px solid white;
     text-align: center; }
   .homeBackground .actionButton {
-    height: 150px;
-    width: 300px;
-    border-radius: 20px;
-    background-color: white;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: grey;
     margin-top: 100px;
     font-weight: bolder;
     font-size: 24px; }
