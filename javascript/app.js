@@ -6,6 +6,14 @@ app.config(function($routeProvider) {
       templateUrl: 'partials/home.html',
       controller: 'HomeController'
     })
+    .when('/login', {
+      templateUrl: 'partials/login.html',
+      controller: 'LoginController'
+    })
+    .when('/createAccount', {
+      templateUrl: 'partials/createAccount.html',
+      controller: 'LoginController'
+    })
     .when('/dashboard', {
       templateUrl: 'partials/dashboard.html',
       controller: 'DashboardController'
