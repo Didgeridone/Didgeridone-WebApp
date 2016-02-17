@@ -40,8 +40,11 @@
           </form>
       </section>
 
-        <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text">
+<!--         <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data | filter:search.text"> -->
+        <div ng-repeat="datem in data | filter:search.text">{{datem.name}}
         <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
+          <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default">Edit Task</button>
+        <div ng-show="editBoolean">
           <form>
             <input ng-model="datem.name" />
             <select ng-model="datem.enter">
@@ -61,8 +64,12 @@
             <label>
               Done: <input type="checkbox" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
             </label>
-            <button ng-click="updateTask(datem)">Update Task</button>
+            <button class="btn btn-sm btn-default" ng-click="updateTask(datem)">Update Task</button>
           </form>
-        </uib-accordion-group>
+          </div>
+          </div>
+        <!-- </uib-accordion-group> -->
+                </uib-accordion-group>
+
   </div>
 </div>

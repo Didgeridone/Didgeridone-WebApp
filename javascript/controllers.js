@@ -92,4 +92,10 @@ app.controller('DashboardController', function($scope, $http) {
         $scope.addBoolean=false;
       }
     }
+    $scope.addBoolean = false;
+
+    $scope.editBoolean = false;
+    $scope.toggleEdit = function () {
+        $scope.editBoolean = !$scope.editBoolean;
+    };
 });
