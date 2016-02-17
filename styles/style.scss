@@ -1,12 +1,14 @@
-$titleColor: #FFD5B0;
-$bodyBackground: black;
-$headerBackground: #532A0F;
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+$titleColor:black;
+$bodyBackground: white;
+$headerBackground: khaki;
 //Home View
-
+$font: 'Raleway', sans-serif;
 
 h1 {
 	color: $titleColor;
 	margin: auto;
+	font-family: $font;
 }
 
 @mixin backgroundColors {
@@ -22,6 +24,7 @@ header {
 	background-color: $headerBackground;
 	height: 120px;
 	width: 100%;
+	text-align: center;
 	.signIn {
 		background-color: $titleColor;
 		float: right;
@@ -54,24 +57,14 @@ header {
 //Tasks
 
 
-.tasksBackground { @include 
+.tasksBackground { @include
 	backgroundColors;
+
 }
 
 .tasksBox {
 	width: 60%;
 	height: 100%;
 	margin: auto;
+		font-family: $font;
 }
-
-
-
-
-
-
-
-
-
-
-
-

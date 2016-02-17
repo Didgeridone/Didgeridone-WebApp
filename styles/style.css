@@ -1,13 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 h1 {
-  color: #FFD5B0;
-  margin: auto; }
+  color: black;
+  margin: auto;
+  font-family: "Raleway", sans-serif; }
 
 header {
-  background-color: #532A0F;
+  background-color: khaki;
   height: 120px;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
   header .signIn {
-    background-color: #FFD5B0;
+    background-color: black;
     float: right;
     margin-top: 35px;
     border-radius: 30px;
@@ -16,7 +19,7 @@ header {
     font-size: 20px; }
 
 .homeBackground {
-  background-color: black;
+  background-color: white;
   width: 100%;
   height: 1000px;
   text-align: center;
@@ -24,18 +27,18 @@ header {
   .homeBackground .centerAction {
     width: 100%;
     height: 500px;
-    border: 2px solid #532A0F; }
+    border: 2px solid khaki; }
   .homeBackground .actionButton {
     height: 150px;
     width: 300px;
     border-radius: 20px;
-    background-color: #FFD5B0;
+    background-color: black;
     margin-top: 100px;
     font-weight: bolder;
     font-size: 24px; }
 
 .tasksBackground {
-  background-color: black;
+  background-color: white;
   width: 100%;
   height: 1000px;
   text-align: center;
@@ -44,6 +47,7 @@ header {
 .tasksBox {
   width: 60%;
   height: 100%;
-  margin: auto; }
+  margin: auto;
+  font-family: "Raleway", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */
