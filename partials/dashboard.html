@@ -10,48 +10,95 @@
         </button>
         <!-- ng-repeat tasks list -->
         <uib-accordion close-others="oneAtATime">
-            <!--
-                <uib-accordion-group heading="Test">
-                    <p>
-                        On click, the tasks will open up here
-                    </p>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">
-                        Add Item
-                    </button>
-                    <div ng-repeat="item in items">
-                        {{item}}
-                    </div>
-                </uib-accordion-group>
-            -->
             <uib-accordion close-others="oneAtATime">
                 <uib-accordion-group heading="{{datem.name}}" ng-repeat="datem in data">
-                <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">Delete Task</button>
-
-                        <li>
-                            {{datem.task_id}}
-                        </li>
-
+                    <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem.task_id)">
+                        Delete Task
+                    </button>
+                    <li>
+                        {{datem.task_id}}
+                    </li>
+                    <li>
+                        <form name="updatetaskForm">
+                            <label for="taskName">
+                                Task Name
+                            </label>
+                            <input type="text" ng-model="datem.name" name="taskName"/>
+                        </input>
+                        <br />
+                        <label for="enterTag">
+                            On Entry (blank for On Exit)
+                        </label>
+                        <input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" />
+                        <br />
+                        <label>
+                            Distance
+                            <radiogroup ng-model="taskObject.radius">
+                                <label>
+                                    1
+                                    <input type="radio" selected name="distance" value="1"/>
+                                </label>
+                                <label>
+                                    5
+                                    <input type="radio" name="distance" value="5"/>
+                                </label>
+                                <label>
+                                    10
+                                    <input type="radio" name="distance" value="10"/>
+                                </label>
+                                <label>
+                                    15
+                                    <input type="radio" name="distance"value="15"/>
+                                </label>
+                            </radiogroup>
+                        </label>
+                        <button type="submit" class="btn btn-sm btn-default" ng-click="updateTask(data)">
+                            Update Task
+                        </button>
+                    </li>
                 </uib-accordion-group>
             </div>
             <div ng-click="addTask=!addTask">
-
-                <span id="addTask" class="glyphicon glyphicon-plus"></span>
-
-                </div>
-                <section id="addTask" ng-show="addTask">
-                    <form name="addtaskForm">
-                        <label for="taskName">Task Name</label>
-                        <input type="text" ng-model="taskObject.name" name="taskName"></input><br />
-                        <label for="enterTag">On Entry (blank for On Exit)</label><input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
-                        <label>Distance<radiogroup ng-model="taskObject.radius">
-                          <label>1<input type="radio" selected name="distance" value="1"/></label>
-                          <label>5<input type="radio" name="distance" value="5"/></label>
-                          <label>10<input type="radio" name="distance" value="10"/></label>
-                          <label>15<input type="radio" name="distance"value="15"/></label>
-                        </radiogroup></label>
-                        <button type="submit" class="btn btn-sm btn-default" ng-click="addTask()">
-                            Submit Task
-                        </button>
-                    </form>
-                </section>
+                <span id="addTask" class="glyphicon glyphicon-plus">
+                </span>
             </div>
+            <section id="addTask" ng-show="addTask">
+                <form name="addtaskForm">
+                    <label for="taskName">
+                        Task Name
+                    </label>
+                    <input type="text" ng-model="taskObject.name" name="taskName"/>
+                </input>
+                <br />
+                <label for="enterTag">
+                    On Entry (blank for On Exit)
+                </label>
+                <input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" />
+                <br />
+                <label>
+                    Distance
+                    <radiogroup ng-model="taskObject.radius">
+                        <label>
+                            1
+                            <input type="radio" selected name="distance" value="1"/>
+                        </label>
+                        <label>
+                            5
+                            <input type="radio" name="distance" value="5"/>
+                        </label>
+                        <label>
+                            10
+                            <input type="radio" name="distance" value="10"/>
+                        </label>
+                        <label>
+                            15
+                            <input type="radio" name="distance"value="15"/>
+                        </label>
+                    </radiogroup>
+                </label>
+                <button type="submit" class="btn btn-sm btn-default" ng-click="addTask()">
+                    Submit Task
+                </button>
+            </form>
+        </section>
+    </div>

@@ -4,7 +4,7 @@ app.controller('HomeController', function($scope) {
 app.controller('DashboardController', function($scope, $http) {
     $http({
         method: 'GET',
-        url: ' https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603',
+        url: ' https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
         headers: {
             'Accept': 'application/json, text/javascript, /; q=0.01',
             'Content-Type': 'application/json; charset=utf-8',
@@ -42,14 +42,16 @@ app.controller('DashboardController', function($scope, $http) {
     });
     $scope.deleteTask = function(task_id) {
         console.log(task_id)
-                $http.delete('https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603/' + task_id).success(function(data, status, headers) {
-                    $scope.groups.splice(task_id-1, 1)
+                $http.delete('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + task_id).success(function(data, status, headers) {
                 }).error(function(data, status, header, config) {
                   console.error('YOU SUCK')
                 })
     }
+    $scope.removeTask = function(index){
+        $scope.groups.splice(index, 1)
+    }
     $scope.updateTask = function() {
-        $http.put('https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603/').success(function(response, status, headers, config) {
+        $http.put('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/').success(function(response, status, headers, config) {
             console.log(response)
         }).error(function(response, status, headers, config) {
             $scope.error_message = response.error_message;
@@ -70,7 +72,7 @@ app.controller('DashboardController', function($scope, $http) {
     }
     $scope.postTask = function() {
         $http({
-              url: 'https://didgeridone.herokuapp.com/task/56c39410b2273e8c7c9d3603',
+              url: 'https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
               method: "POST",
               data: JSON.stringify($scope.taskObject),
               headers: {
