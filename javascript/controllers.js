@@ -20,33 +20,11 @@ app.controller('DashboardController', function($scope, $http) {
             'Content-Type': 'application/json; charset=utf-8',
         }
     }).success(function(data, status) {
-        console.log(data.user.tasks[0].name)
-        $scope.groups = []
-        // $scope.task_id = []
         $scope.data = []
-        for (i = 0; i < data.user.tasks.length; i++) {
-            $scope.groups.push(data.user.tasks[i].name)
-        }
-        // for (i = 0; i < data.user.tasks.length; i++) {
-        //     $scope.task_id.push(data.user.tasks[i].task_id)
-        // }
         for (i = 0; i < data.user.tasks.length; i++) {
             $scope.data.push(data.user.tasks[i])
         }
         console.log($scope.data)
-        console.log($scope.task_id);
-        // console.log(data.user.tasks[4].task_id)
-        console.log($scope.groups)
-        $scope.index = $scope.groups.length
-        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-        $scope.addItem = function() {
-            var newItemNo = $scope.items.length + 1;
-            $scope.items.push('Item ' + newItemNo);
-        };
-        $scope.status = {
-            isFirstOpen: true,
-            isFirstDisabled: false
-        };
     }).error(function(data, status) {
         console.log(status)
     });
