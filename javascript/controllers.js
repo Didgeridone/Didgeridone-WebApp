@@ -135,7 +135,7 @@ app.controller('CreateAccountController', function($scope, $http, Auth) {
   $scope.createNewAccount = function(account) {
     $http({
       method: 'POST',
-      url: 'http://localhost:3000/auth/signup',
+      url: 'https://didgeridone.herokuapp.com/auth/signup',
       data: {
         email: account.email,
         password: account.password
@@ -156,7 +156,7 @@ app.controller('LoginController', function($scope, $http, Auth) {
   $scope.login = function(account) {
     $http({
       method: 'POST',
-      url: 'http://localhost:3000/auth/login',
+      url: 'https://didgeridone.herokuapp.com/auth/login',
       data: {
         email: account.email,
         password: account.password
