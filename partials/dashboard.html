@@ -45,7 +45,7 @@
     </section>
     <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
       <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
- <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
+      <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
       <img class="editButton" ng-click="editBoolean = !editBoolean" src="../styles/assets/images/edit.svg">
       <div ng-show="editBoolean" class="editBox">
         <form>
@@ -69,12 +69,5 @@
         </form>
       </div>
     </div>
-
-
-
-
-
-
-
   </div>
 </div>
