@@ -54,7 +54,8 @@ app.factory('Auth', function($http) {
       return authData.token
     },
     getUserID: function() {
-      return authData.userID
+      // return authData.userID
+      return localStorage.getItem("userID")
     },
     setToken: function(token) {
       authData.token = token
@@ -62,6 +63,7 @@ app.factory('Auth', function($http) {
     },
     setUserID: function(userID) {
       authData.userID = userID
+      localStorage.setItem("userID", userID)
     }
   }
 })
