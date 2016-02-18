@@ -7,6 +7,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
   // console.log('User JWT token: ', Auth.getToken());
   // console.log('User ID: ', Auth.getUserID());
 
+// Inital task load on page load
     $http({
         method: 'GET',
         url: ' https://didgeridone.herokuapp.com/task/'+Auth.getUserID(),
@@ -24,7 +25,13 @@ app.controller('DashboardController', function($scope, $http, Auth) {
         console.log(status)
     });
 
+    //Get users current location and assign to controller scope variables
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $scope.currentLat = position.coords.latitude.toString();
+      $scope.currentLong = position.coords.longitude.toString();
+    })
 
+    // API call to return lat/long coordinates of a supplied address
   $scope.locationTest = function(){
     delete $http.defaults.headers.common.Authorization
     $http({
@@ -44,6 +51,38 @@ app.controller('DashboardController', function($scope, $http, Auth) {
 
   }
 
+  $scope.locationTestUpdate = function(datem){
+    delete $http.defaults.headers.common.Authorization
+    // delete datem.
+    $http({
+        method: 'GET',
+        url:'https://maps.googleapis.com/maps/api/geocode/json?address='+datem.locationInfo,
+        headers: {
+            'Accept': 'application/json, text/javascript, /; q=0.01',
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }).success(function(data, status) {
+        console.log(data.results[0].geometry.location)
+        datem.lat= data.results[0].geometry.location.lat.toString();
+        datem.long= data.results[0].geometry.location.lng.toString();
+        delete datem.locationInfo;
+        $scope.updateTask(datem)
+    }).error(function(data, status) {
+        console.log(status)
+    });
+
+  }
+  $scope.taskUpdateLocationBool = false;
+  $scope.updateLocationBool = function(){
+    $scope.taskUpdateLocationBool = $scope.taskUpdateLocationBool === false ? true: false;
+
+  }
+  $scope.getLocationUpdate = function(datem){
+    datem.lat = $scope.currentLat;
+    datem.long = $scope.currentLong;
+    $scope.updateTask(datem);
+    };
+
   $scope.getLocation = function(){
 
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -58,6 +97,12 @@ app.controller('DashboardController', function($scope, $http, Auth) {
         $scope.taskObject.long = position.coords.longitude;
     });
   }
+
+  $scope.mapBoolean = false;
+  $scope.showMap = function(){
+    $scope.mapBoolean = $scope.mapBoolean === false ? true: false;
+   }
+
   $scope.editmode = false;
   $scope.toggleEditMode = function(){
     $scope.editmode = $scope.editmode === false ? true: false;
@@ -74,7 +119,6 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     }
     $scope.updateTask = function(datem) {
       console.log(datem)
-
         $http({
           url: 'https://didgeridone.herokuapp.com/task/'+Auth.getUserID()+'/' + datem.task_id,
           method: "PUT",
