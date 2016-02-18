@@ -2,7 +2,10 @@ app.controller('HomeController', function($scope) {
   $scope.title = "Didgeridone"
 })
 
-app.controller('DashboardController', function($scope, $http) {
+app.controller('DashboardController', function($scope, $http, Auth) {
+  //Just illustrating use of factory
+  console.log('User JWT token: ', Auth.getToken());
+  console.log('User ID: ', Auth.getUserID());
 
   $scope.getLocation = function(){
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -128,7 +131,7 @@ app.controller('DashboardController', function($scope, $http) {
     }
 });
 
-app.controller('CreateAccountController', function($scope, $http) {
+app.controller('CreateAccountController', function($scope, $http, Auth) {
   $scope.createNewAccount = function(account) {
     $http({
       method: 'POST',
@@ -139,11 +142,8 @@ app.controller('CreateAccountController', function($scope, $http) {
       }
     }).then(function(response) {
       if (response.data.created_user) {
-        $scope.auth = {}
-        $scope.auth.token = response.data.token
-        $scope.auth.auth = response.data.created_user._id
-        // localStorage.token = response.data.token
-        // localStorage.userID = response.data.created_user._id
+        Auth.setToken(response.data.token)
+        Auth.setUserID(response.data.created_user._id)
         window.location = '/#/dashboard'
       }
     }).catch(function(error) {
@@ -152,7 +152,7 @@ app.controller('CreateAccountController', function($scope, $http) {
   }
 })
 
-app.controller('LoginController', function($scope, $http) {
+app.controller('LoginController', function($scope, $http, Auth) {
   $scope.login = function(account) {
     $http({
       method: 'POST',
@@ -162,13 +162,9 @@ app.controller('LoginController', function($scope, $http) {
         password: account.password
       }
     }).then(function(response) {
-      console.log('login response:', response);
       if (response.data.user) {
-        $scope.auth = {}
-        $scope.auth.token = response.data.token
-        $scope.auth.auth = response.data.user._id
-        // localStorage.token = response.data.token
-        // localStorage.userID = response.data.created_user._id
+        Auth.setToken(response.data.token)
+        Auth.setUserID(response.data.user._id)
         window.location = '/#/dashboard'
       }
     }).catch(function(error) {
