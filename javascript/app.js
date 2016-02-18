@@ -1,5 +1,5 @@
-var app = angular.module('didjApp', ['ngRoute', 'ui.bootstrap', 'ngSanitize']);
-
+var app = angular.module('didjApp', ['ngRoute', 'ngSanitize']);
+// 'ui.bootstrap'
 app.config(function($routeProvider) {
   $routeProvider
     .when('/', {
