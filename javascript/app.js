@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
     })
     .when('/createAccount', {
       templateUrl: 'partials/createAccount.html',
-      controller: 'LoginController'
+      controller: 'CreateAccountController'
     })
     .when('/dashboard', {
       templateUrl: 'partials/dashboard.html',

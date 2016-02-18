@@ -3,14 +3,14 @@
 </header>
 <div class="loginPage">
   <h2>Please Login Below</h2>
-  <form class="authForm">
+  <form ng-submit="login(loginInfo)" class="authForm">
     <div class="input">
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64">
+      <input ng-model="loginInfo.email" type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64" placeholder="email" required>
     </div>
-    <div class="input clearfix">
+    <div class="input">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off">
+      <input ng-model="loginInfo.password" type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off" placeholder="password" required>
     </div>
     <input type="submit" id="login" name="login" value="Login">
   </form>

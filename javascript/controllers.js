@@ -1,6 +1,7 @@
 app.controller('HomeController', function($scope) {
-    $scope.title = "Didgeridone"
+  $scope.title = "Didgeridone"
 })
+
 app.controller('DashboardController', function($scope, $http) {
 
   $scope.getLocation = function(){
@@ -126,3 +127,52 @@ app.controller('DashboardController', function($scope, $http) {
       console.log('working blur')
     }
 });
+
+app.controller('CreateAccountController', function($scope, $http) {
+  $scope.createNewAccount = function(account) {
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/auth/signup',
+      data: {
+        email: account.email,
+        password: account.password
+      }
+    }).then(function(response) {
+      if (response.data.created_user) {
+        $scope.auth = {}
+        $scope.auth.token = response.data.token
+        $scope.auth.auth = response.data.created_user._id
+        // localStorage.token = response.data.token
+        // localStorage.userID = response.data.created_user._id
+        window.location = '/#/dashboard'
+      }
+    }).catch(function(error) {
+      console.log('create user error: ', error);
+    })
+  }
+})
+
+app.controller('LoginController', function($scope, $http) {
+  $scope.login = function(account) {
+    $http({
+      method: 'POST',
+      url: 'http://localhost:3000/auth/login',
+      data: {
+        email: account.email,
+        password: account.password
+      }
+    }).then(function(response) {
+      console.log('login response:', response);
+      if (response.data.user) {
+        $scope.auth = {}
+        $scope.auth.token = response.data.token
+        $scope.auth.auth = response.data.user._id
+        // localStorage.token = response.data.token
+        // localStorage.userID = response.data.created_user._id
+        window.location = '/#/dashboard'
+      }
+    }).catch(function(error) {
+      console.log('login error: ', error);
+    })
+  }
+})
