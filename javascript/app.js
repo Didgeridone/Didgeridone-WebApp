@@ -43,7 +43,7 @@ app.directive("contenteditable", function() {
   };
 });
 
-app.factory('Auth', function() {
+app.factory('Auth', function($http) {
   var authData = {
     token: null,
     userID: null
@@ -58,6 +58,7 @@ app.factory('Auth', function() {
     },
     setToken: function(token) {
       authData.token = token
+      $http.defaults.headers.common.Authorization = 'Bearer ' + token
     },
     setUserID: function(userID) {
       authData.userID = userID
