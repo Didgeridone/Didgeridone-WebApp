@@ -22,51 +22,53 @@
         </g>
       </svg>
     <section id="addTask" ng-show="addBoolean" class="addtaskBox" ng-class="{makingTask: addBoolean}">
-      <form name="addtaskForm">
+      <form name="addtaskForm" ng-submit="postTask()">
         <label for="taskName">Task Name</label>
         <input type="text" ng-model="taskObject.name" name="taskName"></input><br />
-        <input type="search" ng-model="locationInfo" />
-        <button ng-click="locationTest()">Push me</button>
+        <label>Location<input type="search" ng-model="locationInfo" ng-blur="locationTest()"/></label>
         <p>
         {{locationInfo}}
         </p>
-        <label for="enterTag">On Entry (blank for On Exit)</label><input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
+        <label><input type="checkbox" ng-click="getLocation()">Use Current Location</label><br />
+
+        <label for="enterTag">On Entry (blank for On Exit)</label><input type="checkbox" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
         <label>Distance<radiogroup>
           <label>1<input type="radio" selected name="distance" value="1" ng-model="taskObject.radius"/></label>
           <label>5<input type="radio" name="distance" value="5" ng-model="taskObject.radius"/></label>
           <label>10<input type="radio" name="distance" value="10" ng-model="taskObject.radius"/></label>
           <label>15<input type="radio" name="distance"value="15" ng-model="taskObject.radius"/></label>
         </radiogroup></label>
-        <label><input type="checkbox" ng-click="getLocation()">Use Current Location</label>
-        <button type="submit" class="btn btn-sm btn-default" ng-click="postTask()">
+        <button type="submit" class="btn btn-sm btn-default">
           Submit Task
         </button>
       </form>
     </section>
-    <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
+
+<!-- Tasks Div  -->
+      <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
+      <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>  
       <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
-      <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
+      <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
       <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default">Edit Task</button>
       <div ng-show="editBoolean" class="editBox">
         <form>
           <select ng-change="updateTask(datem)" ng-model="datem.enter">
-            <option selected='selected' ng-value="false" selected>
+            <option ng-value="false">
               Exit
             </option>
-            <option ng-value="true">
+            <option ng-value="true" ng-seleced="datem.enter">
               Enter
             </option>
           </select>
+          <label>Location
+          <input placeholder="{{datem.lat}}" /></label>
           <radiogroup>
             <label>1<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="1" ng-model="datem.radius"/></label>
             <label>5<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="5" ng-model="datem.radius"/></label>
             <label>10<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="10" ng-model="datem.radius"/></label>
             <label>15<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="15" ng-model="datem.radius"/></label></radiogroup>
-          <label>
-            Done: <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
-          </label>
+
           <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
-           <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
 
         </form>
       </div>

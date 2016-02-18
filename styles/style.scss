@@ -118,6 +118,10 @@ svg {
 
 .taskName {
 	margin: 20px;
+	h3 {
+		display: inline-block;
+		padding: 10px;
+	}
 }
 
 .tasksBox {
@@ -229,5 +233,5 @@ svg {
 }
 
 .makingTask {
-	border: 2px green solid;
+	background-color: lightgrey;
 }
