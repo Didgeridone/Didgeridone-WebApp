@@ -46,10 +46,10 @@
 
 <!-- Tasks Div  -->
       <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
-      <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>  
+      <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
       <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
-      <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
-      <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default">Edit Task</button>
+ <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
+      <img class="editButton" ng-click="editBoolean = !editBoolean" src="../styles/assets/images/edit.svg">
       <div ng-show="editBoolean" class="editBox">
         <form>
           <select ng-change="updateTask(datem)" ng-model="datem.enter">
@@ -69,7 +69,6 @@
             <label>15<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="15" ng-model="datem.radius"/></label></radiogroup>
 
           <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
-
         </form>
       </div>
     </div>
