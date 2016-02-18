@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
     })
     .when('/createAccount', {
       templateUrl: 'partials/createAccount.html',
-      controller: 'LoginController'
+      controller: 'CreateAccountController'
     })
     .when('/dashboard', {
       templateUrl: 'partials/dashboard.html',
@@ -42,3 +42,25 @@ app.directive("contenteditable", function() {
     }
   };
 });
+
+app.factory('Auth', function() {
+  var authData = {
+    token: null,
+    userID: null
+  }
+
+  return {
+    getToken: function() {
+      return authData.token
+    },
+    getUserID: function() {
+      return authData.userID
+    },
+    setToken: function(token) {
+      authData.token = token
+    },
+    setUserID: function(userID) {
+      authData.userID = userID
+    }
+  }
+})

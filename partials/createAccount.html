@@ -3,14 +3,14 @@
 </header>
 <div class="createAccountPage">
   <h2>Create an Account</h2>
-  <form class="authForm">
+  <form ng-submit="createNewAccount(account)" class="authForm">
     <div class="input">
       <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64">
+      <input ng-model="account.email" type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64" placeholder="email" required>
     </div>
-    <div class="input clearfix">
+    <div class="input">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off">
+      <input ng-model="account.password" type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off" placeholder="password" required>
     </div>
     <input type="submit" id="createAccount" name="createAccount" value="Create Account">
   </form>
