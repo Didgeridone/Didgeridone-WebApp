@@ -104,8 +104,13 @@ svg {
 .trashCan {
   height: 20px;
   width: 20px;
+  cursor: pointer; }
+
+.editButton {
+  height: 15px;
+  width: 15px;
   cursor: pointer;
-  margin-left: 20px; }
+  margin-left: 15px; }
 
 .createAccountPage, .loginPage {
   text-align: center; }
