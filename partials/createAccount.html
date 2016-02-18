@@ -1,12 +1,17 @@
 <header>
   <h1>Didgeridone</h1>
 </header>
-<div>
-  <form>
-    <input>
-    <input>
-    <input>
-    <button type="submit"></button>
+<div class="createAccountPage">
+  <h2>Create an Account</h2>
+  <form class="authForm">
+    <div class="input">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64">
+    </div>
+    <div class="input clearfix">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off">
+    </div>
+    <input type="submit" id="createAccount" name="createAccount" value="Create Account">
   </form>
 </div>
-<a href="#/">Home</a>
