@@ -1,12 +1,17 @@
 <header>
   <h1>Didgeridone</h1>
 </header>
-<div>
-  <form>
-    <input>
-    <input>
-    <input>
-    <button type="submit"></button>
+<div class="loginPage">
+  <h2>Please Login Below</h2>
+  <form ng-submit="login(loginInfo)" class="authForm">
+    <div class="input">
+      <label for="email">Email Address</label>
+      <input ng-model="loginInfo.email" type="email" id="email" name="email" autocorrect="off" autocapitalize="off" maxlength="64" placeholder="email" required>
+    </div>
+    <div class="input">
+      <label for="password">Password</label>
+      <input ng-model="loginInfo.password" type="password" id="password" name="password" maxlength="12" autocorrect="off" autocapitalize="off" placeholder="password" required>
+    </div>
+    <input type="submit" id="login" name="login" value="Login">
   </form>
 </div>
-<a href="#/">Home</a>

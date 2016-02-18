@@ -1,4 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
 h1 {
   color: black;
   margin: auto;
@@ -37,12 +45,14 @@ header {
     width: 100vw;
     height: 80vh; }
   .heroImg h3 {
+    font-size: 30px;
     color: white;
     position: absolute;
     left: 20px;
     top: 525px;
     letter-spacing: 1px;
-    text-shadow: 2px 2px black; }
+    font-weight: 700;
+    text-shadow: 2px 2px grey; }
 
 .homeBackground {
   background-color: white;
@@ -55,10 +65,10 @@ header {
     border: 2px solid white;
     text-align: center; }
   .homeBackground .actionButton {
-    height: 150px;
-    width: 300px;
-    border-radius: 20px;
-    background-color: white;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: grey;
     margin-top: 100px;
     font-weight: bolder;
     font-size: 24px; }
@@ -94,5 +104,79 @@ svg {
   width: 20px;
   cursor: pointer;
   margin-left: 20px; }
+
+.createAccountPage, .loginPage {
+  text-align: center; }
+  .createAccountPage *, .loginPage * {
+    box-sizing: border-box; }
+  .createAccountPage .authForm, .loginPage .authForm {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    display: block;
+    max-width: 300px;
+    margin: 20px auto; }
+    .createAccountPage .authForm input[type=email],
+    .createAccountPage .authForm input[type=password], .loginPage .authForm input[type=email],
+    .loginPage .authForm input[type=password] {
+      border: 0;
+      margin: 0;
+      height: 40px;
+      padding: 0;
+      line-height: 30px;
+      font-size: 90%;
+      transition: background-color .5s; }
+    .createAccountPage .authForm input:focus, .loginPage .authForm input:focus {
+      outline: none; }
+    .createAccountPage .authForm label, .loginPage .authForm label {
+      width: 37.5%;
+      display: block;
+      float: left;
+      color: #999;
+      padding: 0 10px;
+      font-size: 70%;
+      text-transform: uppercase;
+      line-height: 40px;
+      white-space: nowrap;
+      transition: all .5s; }
+    .createAccountPage .authForm .input, .loginPage .authForm .input {
+      border: solid #ccc;
+      border-width: 0 1px 1px 1px;
+      transition: background-color .5s;
+      overflow: hidden; }
+    .createAccountPage .authForm .input:first-of-type, .loginPage .authForm .input:first-of-type {
+      border-top: 1px solid #ccc;
+      border-radius: 6px 6px 0 0; }
+    .createAccountPage .authForm .input:last-of-type, .loginPage .authForm .input:last-of-type {
+      border-radius: 0 0 6px 6px; }
+    .createAccountPage .authForm .input:hover label, .loginPage .authForm .input:hover label {
+      color: #333; }
+    .createAccountPage .authForm input[type=submit], .loginPage .authForm input[type=submit] {
+      -webkit-appearance: none;
+      border: 0;
+      background-color: #89b555;
+      color: #fff;
+      border-radius: 6px;
+      display: block;
+      margin: 20px auto;
+      padding: 0 20px;
+      cursor: pointer;
+      font-size: 90%;
+      line-height: 40px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      transition: all .5s; }
+    .createAccountPage .authForm input[type=submit]:focus,
+    .createAccountPage .authForm input[type=submit]:hover, .loginPage .authForm input[type=submit]:focus,
+    .loginPage .authForm input[type=submit]:hover {
+      background-color: #9bcc60;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
+    .createAccountPage .authForm #email, .loginPage .authForm #email {
+      width: 62.5%;
+      display: block; }
+    .createAccountPage .authForm #password, .loginPage .authForm #password {
+      width: 42.5%;
+      float: left; }
 
 /*# sourceMappingURL=style.css.map */

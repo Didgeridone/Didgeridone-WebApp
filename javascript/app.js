@@ -1,5 +1,5 @@
 var app = angular.module('didjApp', ['ngRoute', 'ngSanitize']);
-// 'ui.bootstrap'
+
 app.config(function($routeProvider) {
   $routeProvider
     .when('/', {
@@ -12,7 +12,7 @@ app.config(function($routeProvider) {
     })
     .when('/createAccount', {
       templateUrl: 'partials/createAccount.html',
-      controller: 'LoginController'
+      controller: 'CreateAccountController'
     })
     .when('/dashboard', {
       templateUrl: 'partials/dashboard.html',
@@ -42,3 +42,26 @@ app.directive("contenteditable", function() {
     }
   };
 });
+
+app.factory('Auth', function($http) {
+  var authData = {
+    token: null,
+    userID: null
+  }
+
+  return {
+    getToken: function() {
+      return authData.token
+    },
+    getUserID: function() {
+      return authData.userID
+    },
+    setToken: function(token) {
+      authData.token = token
+      $http.defaults.headers.common.Authorization = 'Bearer ' + token
+    },
+    setUserID: function(userID) {
+      authData.userID = userID
+    }
+  }
+})
