@@ -179,4 +179,17 @@ svg {
       width: 42.5%;
       float: left; }
 
+.calltoAction {
+  background-color: #5D1761;
+  color: white;
+  font-weight: bolder;
+  font-size: 22px;
+  height: 100px;
+  width: 220px;
+  border-radius: 10px;
+  cursor: pointer; }
+
+.calltoAction:hover {
+  opacity: .7; }
+
 /*# sourceMappingURL=style.css.map */
