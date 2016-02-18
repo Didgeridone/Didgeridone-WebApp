@@ -25,6 +25,11 @@
       <form name="addtaskForm">
         <label for="taskName">Task Name</label>
         <input type="text" ng-model="taskObject.name" name="taskName"></input><br />
+        <input type="search" ng-model="locationInfo" />
+        <button ng-click="locationTest()">Push me</button>
+        <p>
+        {{locationInfo}}
+        </p>
         <label for="enterTag">On Entry (blank for On Exit)</label><input type="radio" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
         <label>Distance<radiogroup ng-model="taskObject.radius">
           <label>1<input type="radio" selected name="distance" value="1"/></label>
@@ -62,8 +67,16 @@
           </label>
           <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
            <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
+
         </form>
       </div>
     </div>
+
+
+
+
+
+
+
   </div>
 </div>
