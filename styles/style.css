@@ -1,41 +1,192 @@
-/*
-Error: Invalid CSS after "...px green solid;": expected "}", was ""
-        on line 242 of style.scss
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0; }
+  body #map {
+    height: 50%; }
 
-237: 
-238: 
-239: .makingTask {
-240: 	border: 2px green solid;
+a, a:visited {
+  text-decoration: none; }
 
-Backtrace:
-style.scss:242
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1161:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:639:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:631:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...px green solid;\": expected \"}\", was \"\"\A         on line 242 of style.scss\A \A 237: \A 238: \A 239: .makingTask {\A 240: 	border: 2px green solid;"; }
+h1 {
+  color: black;
+  margin: auto;
+  font-family: "Raleway", sans-serif; }
+
+header {
+  background-color: white;
+  height: 100px;
+  width: 100%; }
+  header ul {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    list-style-type: none; }
+    header ul li {
+      display: inline;
+      padding: 15px;
+      font-weight: 800;
+      letter-spacing: 2px; }
+  header .signIn {
+    background-color: white;
+    float: right;
+    margin: 20px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px; }
+  header h1 {
+    text-align: left;
+    padding: 20px;
+    letter-spacing: 3px; }
+
+.heroImg {
+  position: relative; }
+  .heroImg img {
+    width: 100vw;
+    height: 80vh; }
+  .heroImg h3 {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 525px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 2px 2px grey; }
+
+.homeBackground {
+  background-color: white;
+  width: 100%;
+  height: 1000px;
+  text-align: center; }
+  .homeBackground .centerAction {
+    width: 100%;
+    height: 500px;
+    border: 2px solid white;
+    text-align: center; }
+  .homeBackground .actionButton {
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: grey;
+    margin-top: 100px;
+    font-weight: bolder;
+    font-size: 24px; }
+
+.tasksBackground {
+  background-color: white;
+  width: 100%;
+  height: 1000px;
+  text-align: center; }
+
+svg {
+  margin: 15px; }
+
+.addtaskBox {
+  margin-bottom: 30px; }
+
+.taskName {
+  margin: 20px; }
+
+.tasksBox {
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  font-family: "Raleway", sans-serif; }
+  .tasksBox h3:focus {
+    outline: none; }
+
+.editBox {
+  margin: 25px; }
+
+.trashCan {
+  height: 20px;
+  width: 20px;
+  cursor: pointer; }
+
+.editButton {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  margin-left: 15px; }
+
+.createAccountPage, .loginPage {
+  text-align: center; }
+  .createAccountPage *, .loginPage * {
+    box-sizing: border-box; }
+  .createAccountPage .authForm, .loginPage .authForm {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    display: block;
+    max-width: 300px;
+    margin: 20px auto; }
+    .createAccountPage .authForm input[type=email],
+    .createAccountPage .authForm input[type=password], .loginPage .authForm input[type=email],
+    .loginPage .authForm input[type=password] {
+      border: 0;
+      margin: 0;
+      height: 40px;
+      padding: 0;
+      line-height: 30px;
+      font-size: 90%;
+      transition: background-color .5s; }
+    .createAccountPage .authForm input:focus, .loginPage .authForm input:focus {
+      outline: none; }
+    .createAccountPage .authForm label, .loginPage .authForm label {
+      width: 37.5%;
+      display: block;
+      float: left;
+      color: #999;
+      padding: 0 10px;
+      font-size: 70%;
+      text-transform: uppercase;
+      line-height: 40px;
+      white-space: nowrap;
+      transition: all .5s; }
+    .createAccountPage .authForm .input, .loginPage .authForm .input {
+      border: solid #ccc;
+      border-width: 0 1px 1px 1px;
+      transition: background-color .5s;
+      overflow: hidden; }
+    .createAccountPage .authForm .input:first-of-type, .loginPage .authForm .input:first-of-type {
+      border-top: 1px solid #ccc;
+      border-radius: 6px 6px 0 0; }
+    .createAccountPage .authForm .input:last-of-type, .loginPage .authForm .input:last-of-type {
+      border-radius: 0 0 6px 6px; }
+    .createAccountPage .authForm .input:hover label, .loginPage .authForm .input:hover label {
+      color: #333; }
+    .createAccountPage .authForm input[type=submit], .loginPage .authForm input[type=submit] {
+      -webkit-appearance: none;
+      border: 0;
+      background-color: #89b555;
+      color: #fff;
+      border-radius: 6px;
+      display: block;
+      margin: 20px auto;
+      padding: 0 20px;
+      cursor: pointer;
+      font-size: 90%;
+      line-height: 40px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      transition: all .5s; }
+    .createAccountPage .authForm input[type=submit]:focus,
+    .createAccountPage .authForm input[type=submit]:hover, .loginPage .authForm input[type=submit]:focus,
+    .loginPage .authForm input[type=submit]:hover {
+      background-color: #9bcc60;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
+    .createAccountPage .authForm #email, .loginPage .authForm #email {
+      width: 62.5%;
+      display: block; }
+    .createAccountPage .authForm #password, .loginPage .authForm #password {
+      width: 42.5%;
+      float: left; }
+
+.makingTask {
+  border: 2px green solid; }
+
+/*# sourceMappingURL=style.css.map */

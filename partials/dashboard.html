@@ -45,8 +45,8 @@
     </section>
     <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
       <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
-      <button type="button" class="btn btn-sm btn-default" ng-click="deleteTask(datem)">Delete Task</button>
-      <button ng-click="editBoolean = !editBoolean" class="btn btn-sm btn-default"><img class="editButton" src="../styles/assets/images/edit.svg"></button>
+ <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
+      <img class="editButton" ng-click="editBoolean = !editBoolean" src="../styles/assets/images/edit.svg">
       <div ng-show="editBoolean" class="editBox">
         <form>
           <select ng-change="updateTask(datem)" ng-model="datem.enter">
@@ -66,8 +66,6 @@
             Done: <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
           </label>
           <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
-           <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
-
         </form>
       </div>
     </div>
