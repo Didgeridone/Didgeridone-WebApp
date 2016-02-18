@@ -3,9 +3,9 @@ app.controller('HomeController', function($scope) {
 })
 
 app.controller('DashboardController', function($scope, $http, Auth) {
-  //Just illustrating use of factory
-  console.log('User JWT token: ', Auth.getToken());
-  console.log('User ID: ', Auth.getUserID());
+  //Just illustrating use of factory for auth services
+  // console.log('User JWT token: ', Auth.getToken());
+  // console.log('User ID: ', Auth.getUserID());
 
   $scope.getLocation = function(){
     navigator.geolocation.getCurrentPosition(function(position) {
