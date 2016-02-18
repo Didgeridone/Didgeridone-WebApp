@@ -7,7 +7,27 @@ app.controller('DashboardController', function($scope, $http, Auth) {
   // console.log('User JWT token: ', Auth.getToken());
   // console.log('User ID: ', Auth.getUserID());
 
+  $scope.locationTest = function(){
+    delete $http.defaults.headers.common.Authorization
+    $http({
+        method: 'GET',
+        url:'https://maps.googleapis.com/maps/api/geocode/json?address='+$scope.locationInfo,
+        headers: {
+            'Accept': 'application/json, text/javascript, /; q=0.01',
+            'Content-Type': 'application/json; charset=utf-8',
+        }
+    }).success(function(data, status) {
+        console.log(data.results[0].geometry.location.lng)
+        $scope.taskObject.lat=data.results[0].geometry.location.lat.toString();
+        $scope.taskObject.long=data.results[0].geometry.location.lng.toString();
+    }).error(function(data, status) {
+        console.log(status)
+    });
+
+  }
+
   $scope.getLocation = function(){
+
     navigator.geolocation.getCurrentPosition(function(position) {
 
         if($scope.taskObject.lat){
@@ -26,7 +46,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
 
     $http({
         method: 'GET',
-        url: ' https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
+        url: ' https://didgeridone.herokuapp.com/task/'+Auth.getUserID(),
         headers: {
             'Accept': 'application/json, text/javascript, /; q=0.01',
             'Content-Type': 'application/json; charset=utf-8',
@@ -42,7 +62,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     });
     $scope.deleteTask = function(datem) {
         console.log(datem.task_id)
-                $http.delete('https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + datem.task_id).success(function(data, status, headers) {
+                $http.delete('https://didgeridone.herokuapp.com/task/'+Auth.getUserID()+'/' + datem.task_id).success(function(data, status, headers) {
                   var taskIndex = $scope.data.indexOf(datem)
                     $scope.data.splice(taskIndex, 1)
                 }).error(function(data, status, header, config) {
@@ -53,7 +73,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
       console.log(datem)
 
         $http({
-          url: 'https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612/' + datem.task_id,
+          url: 'https://didgeridone.herokuapp.com/task/'+Auth.getUserID()+'/' + datem.task_id,
           method: "PUT",
           data: angular.toJson(datem),
           headers: {
@@ -80,7 +100,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     }
     $scope.postTask = function() {
         $http({
-              url: 'https://didgeridone.herokuapp.com/task/56c3ad2db2273e8c7c9d3612',
+              url: 'https://didgeridone.herokuapp.com/task/'+Auth.getUserID(),
               method: "POST",
               data: JSON.stringify($scope.taskObject),
               headers: {
