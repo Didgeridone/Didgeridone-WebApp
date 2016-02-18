@@ -107,6 +107,12 @@ svg {
   cursor: pointer;
   margin-left: 20px; }
 
+.editButton {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-left: 20px; }
+
 .createAccountPage, .loginPage {
   text-align: center; }
   .createAccountPage *, .loginPage * {

@@ -140,6 +140,13 @@ svg {
 	cursor: pointer;
 	margin-left: 20px;
 }
+.editButton {
+height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+
+}
 
 //Create an account and login view
 .createAccountPage, .loginPage {
@@ -242,4 +249,6 @@ svg {
 .calltoAction:hover{
 	opacity: .7; 
 }
+
+
 
