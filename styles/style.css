@@ -89,6 +89,9 @@ svg {
 
 .taskName {
   margin: 20px; }
+  .taskName h3 {
+    display: inline-block;
+    padding: 10px; }
 
 .tasksBox {
   width: 60%;
@@ -187,6 +190,6 @@ svg {
       float: left; }
 
 .makingTask {
-  border: 2px green solid; }
+  background-color: lightgrey; }
 
 /*# sourceMappingURL=style.css.map */
