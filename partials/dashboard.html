@@ -37,7 +37,7 @@
           <label>5<input type="radio" name="distance" value="5" ng-model="taskObject.radius"/></label>
           <label>10<input type="radio" name="distance" value="10" ng-model="taskObject.radius"/></label>
         </radiogroup></label>
-        <button type="submit" class="">
+        <button type="submit" class="btn btn-sm btn-default">
           Submit Task
         </button>
       </form>
@@ -74,6 +74,14 @@
             <button class="" ng-mousedown="updateTask(datem)">Update Task</button>
           </form>
         </div>
+        <iframe
+          width="400"
+          height="300"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDimfo3HxFf_ToN2hidLHPE78Tz9YifJzI&q=40.7127,74.0059" allowfullscreen>
+        </iframe>
+        <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{taskObject.lat}},{{taskObject.long}}&zoom=5&size=200x200&maptype=roadmap&markers=0.0000,0.0000&sensor=false">
     </div>
   </div>
 </div>
