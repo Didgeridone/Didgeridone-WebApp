@@ -1,5 +1,5 @@
 <header>
-  <h1>Didgeridone</h1>
+  <a href="#/home"><h1>Didgeridone</h1></a>
 </header>
 <div class="tasksBackground">
   <h1 class=tasksTitle>
@@ -44,12 +44,11 @@
     </section>
 
 <!-- Tasks Div  -->
-    <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
-        <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
-        <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-keypress="preventEnter($event)" ng-bind-html="datem.name" ></h3>
+    <div class="taskName" ng-repeat="datem in data | filter:search.text" ng-class="{'editing': editBoolean}">
+        <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true" ng-class="{'doneBox': editBoolean}"/>
+        <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ng-keydown="preventEnter($event)"></h3>
         <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
         <img class="editButton" ng-click="editBoolean = !editBoolean" src="../styles/assets/images/edit.svg">
-        <button ng-click="showMap()">Map</button>
         <div ng-show="editBoolean" class="editBox">
           <form class="fixformBox">
             <select ng-change="updateTask(datem)" ng-model="datem.enter">
@@ -60,17 +59,20 @@
                 Enter
               </option>
             </select>
-            <button ng-click="updateLocationBool()">Show Location</button>
+            <button ng-click="taskUpdateLocationBool = !taskUpdateLocationBool">Show Location</button>
             <div ng-show="taskUpdateLocationBool">
               <label>Location<input type="search" ng-model="datem.locationInfo" ng-blur="locationTestUpdate(datem)"/></label>
               <label><input type="checkbox" ng-click="getLocationUpdate(datem)">Use Current Location</label><br />
-              <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{datem.lat}},{{datem.long}}&zoom={{zoomSize}}&size=200x200&markers=color:red%7C{{datem.lat}},{{datem.long}}&maptype=roadmap&markers=0.0000,0.0000&sensor=false" ng-show="datem.lat && datem.long">
+
+              <img ng-src="https://maps.googleapis.com/maps/api/staticmap?center={{datem.lat}},{{datem.long}}&zoom={{zoomSize}}&size=200x200&markers=color:red%7C{{datem.lat}},{{datem.long}}&maptype=roadmap&markers=0.0000,0.0000&sensor=false" ng-show="datem.lat && datem.long">
             </div>
             <radiogroup>
               <label>1<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="1" ng-model="datem.radius"/></label>
               <label>5<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="5" ng-model="datem.radius"/></label>
               <label>10<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="10" ng-model="datem.radius"/></label>
             </radiogroup>
+            <!-- <button class="" ng-mousedown="updateTask(datem)">Update</button> -->
+
           </form>
         </div>
 
