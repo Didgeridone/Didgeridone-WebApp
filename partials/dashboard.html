@@ -24,14 +24,14 @@
     <section id="addTask" ng-show="addBoolean" class="addtaskBox" ng-class="{makingTask: addBoolean}">
       <form name="addtaskForm" ng-submit="postTask()">
         <label for="taskName">Task Name</label>
-        <input type="text" ng-model="taskObject.name" name="taskName"></input><br />
-        <label>Location<input type="search" ng-model="locationInfo" ng-blur="locationTest()"/></label>
+        <input class="spacetaskInputs" type="text" ng-model="taskObject.name" name="taskName"></input><br />
+        <label>Location<input class="spacetaskInputs" type="search" ng-model="locationInfo" ng-blur="locationTest()"/></label>
         <p>
         {{locationInfo}}
         </p>
-        <label><input type="checkbox" ng-click="getLocation()">Use Current Location</label><br />
+        <label><input class="spacetaskInputs" type="checkbox" ng-click="getLocation()">Use Current Location</label><br />
 
-        <label for="enterTag">On Entry (blank for On Exit)</label><input type="checkbox" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
+        <label for="enterTag">On Entry (blank for On Exit)</label><input class="spacetaskInputs" type="checkbox" ng-model="taskObject.enter" name="enterTag" ng-value="true" /><br />
         <label>Distance<radiogroup>
           <label>1<input type="radio" selected name="distance" value="1" ng-model="taskObject.radius"/></label>
           <label>5<input type="radio" name="distance" value="5" ng-model="taskObject.radius"/></label>
