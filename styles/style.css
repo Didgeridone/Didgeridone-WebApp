@@ -105,7 +105,11 @@ svg {
   margin: 15px; }
 
 .addtaskBox {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  border-radius: 10px; }
+
+.spacetaskInputs {
+  margin-bottom: 20px; }
 
 .taskName {
   margin: 20px;
@@ -227,5 +231,8 @@ footer {
 .doneBox {
   color: black;
   background-color: black; }
+
+.addtaskForm {
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

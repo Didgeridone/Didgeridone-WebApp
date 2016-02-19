@@ -128,6 +128,7 @@ h3 {
   }
 }
 
+
 //Tasks
 
 
@@ -142,6 +143,11 @@ svg {
 
 .addtaskBox {
 	margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.spacetaskInputs {
+  margin-bottom: 20px;
 }
 
 .taskName {
@@ -277,18 +283,21 @@ height: 15px;
   }
 }
 
-<<<<<<< HEAD
-=======
+
 footer {
   text-align: center;
 }
 
->>>>>>> b01a3aeacf354791f41b61de7ab3d937a5f85d64
 .makingTask {
 	background-color: lightgrey;
 }
 
+
 .doneBox {
 	color: black;
 	background-color: black;
+}
+
+.addtaskForm {
+  border-radius: 10px;
 }

@@ -2,6 +2,7 @@ app.controller('HomeController', function($scope) {
   $scope.title = "Didgeridone"
 })
 
+
 app.controller('DashboardController', function($scope, $http, Auth) {
   //Just illustrating use of factory for auth services
   // console.log('User JWT token: ', Auth.getToken());
@@ -30,6 +31,10 @@ app.controller('DashboardController', function($scope, $http, Auth) {
       $scope.currentLat = position.coords.latitude.toString();
       $scope.currentLong = position.coords.longitude.toString();
     })
+    $scope.preventEnter = function(keyEvent) {
+    if (keyEvent.which === 13)
+    keyEvent.preventDefault()
+}
 
 
     // API call to return lat/long coordinates of a supplied address
@@ -124,7 +129,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
                   console.error('YOU SUCK')
                 })
     }
-    $scope.zoomSize = 10;
+    $scope.zoomSize = 14;
     $scope.updateTask = function(datem) {
       if(datem.radius > 0 && datem.radius < 5){
             $scope.zoomSize = 14;
