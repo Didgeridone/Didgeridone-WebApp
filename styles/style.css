@@ -7,7 +7,8 @@ body {
     height: 50%; }
 
 a, a:visited {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
 
 h1 {
   color: black;
@@ -51,10 +52,16 @@ header {
     color: white;
     position: absolute;
     left: 20px;
-    top: 525px;
+    bottom: 20px;
     letter-spacing: 1px;
     font-weight: 700;
-    text-shadow: 2px 2px grey; }
+    text-shadow: 2px 2px black; }
+
+.actionCall h3 {
+  font-size: 30px;
+  width: 80vw;
+  margin: 0 auto;
+  padding-bottom: 20px; }
 
 .homeBackground {
   background-color: white;
@@ -67,13 +74,26 @@ header {
     border: 2px solid white;
     text-align: center; }
   .homeBackground .actionButton {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    margin: 0 auto;
     height: 100px;
     width: 200px;
     border-radius: 10px;
-    background-color: grey;
-    margin-top: 100px;
+    border: 2px solid grey;
+    margin-top: 20px;
     font-weight: bolder;
     font-size: 24px; }
+    .homeBackground .actionButton a {
+      color: #32cd32; }
+    .homeBackground .actionButton:hover {
+      background-color: rgba(50, 205, 50, 0.75); }
+      .homeBackground .actionButton:hover a {
+        color: black; }
+  .homeBackground .chunk {
+    margin: 0 auto;
+    width: 50vw; }
 
 .tasksBackground {
   background-color: white;
@@ -122,6 +142,7 @@ svg {
   margin-left: 15px; }
 
 .createAccountPage, .loginPage {
+  position: relative;
   text-align: center; }
   .createAccountPage *, .loginPage * {
     box-sizing: border-box; }
@@ -194,6 +215,11 @@ svg {
     .createAccountPage .authForm #password, .loginPage .authForm #password {
       width: 42.5%;
       float: left; }
+  .createAccountPage img, .loginPage img {
+    width: 100vw; }
+
+footer {
+  text-align: center; }
 
 .makingTask {
   background-color: lightgrey; }
