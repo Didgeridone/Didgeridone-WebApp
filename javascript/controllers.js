@@ -72,6 +72,12 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     });
 
   }
+
+  $scope.preventEnter = function(event){
+    if(event.which===13){
+      event.preventDefault()
+    }
+  }
   $scope.taskUpdateLocationBool = false;
   $scope.updateLocationBool = function(){
     $scope.taskUpdateLocationBool = $scope.taskUpdateLocationBool === false ? true: false;
