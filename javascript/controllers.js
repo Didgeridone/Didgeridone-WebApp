@@ -31,6 +31,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
       $scope.currentLong = position.coords.longitude.toString();
     })
 
+
     // API call to return lat/long coordinates of a supplied address
   $scope.locationTest = function(){
     delete $http.defaults.headers.common.Authorization
@@ -81,7 +82,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     datem.lat = $scope.currentLat;
     datem.long = $scope.currentLong;
     $scope.updateTask(datem);
-    };
+  }
 
   $scope.getLocation = function(){
 
@@ -117,7 +118,20 @@ app.controller('DashboardController', function($scope, $http, Auth) {
                   console.error('YOU SUCK')
                 })
     }
+    $scope.zoomSize = 10;
     $scope.updateTask = function(datem) {
+      if(datem.radius > 0 && datem.radius < 5){
+            $scope.zoomSize = 14;
+            console.log($scope.zoomSize)
+          }
+          else if(datem.radius >= 5 && datem.radius < 10){
+            $scope.zoomSize = 9;
+            console.log($scope.zoomSize)
+          }
+          else{
+            $scope.zoomSize = 8;
+            console.log($scope.zoomSize)
+          }
       console.log(datem)
         $http({
           url: 'https://didgeridone.herokuapp.com/task/'+Auth.getUserID()+'/' + datem.task_id,
@@ -126,10 +140,10 @@ app.controller('DashboardController', function($scope, $http, Auth) {
           headers: {
               'Content-Type': 'application/json',
           }
-      }).success(function(response, status, headers, config) {
-            console.log(response)
-        }).error(function(response, status, headers, config) {
-            $scope.error_message = response.error_message;
+      }).success(function(datem, status, headers, config) {
+            console.log(datem)
+        }).error(function(datem, status, headers, config) {
+            $scope.error_message = datem.error_message;
         });
     };
     $scope.taskObject = {
