@@ -118,9 +118,11 @@ svg {
 
 .taskName {
 	margin: 20px;
+	border-radius: 20px;
 	h3 {
 		display: inline-block;
 		padding: 10px;
+		margin: 10px;
 	}
 }
 
@@ -133,7 +135,7 @@ svg {
 	width: 60%;
 	height: 100%;
 	margin: auto;
-		font-family: $font;
+	font-family: $font;
 	h3:focus {
 		outline: none;
 	}
@@ -243,7 +245,11 @@ height: 15px;
   }
 }
 
-
 .makingTask {
 	background-color: lightgrey;
+}
+
+.doneBox {
+	color: black;
+	background-color: black;
 }

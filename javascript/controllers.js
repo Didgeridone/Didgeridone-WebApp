@@ -80,10 +80,10 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     }
   }
   $scope.taskUpdateLocationBool = false;
-  $scope.updateLocationBool = function(){
-    $scope.taskUpdateLocationBool = $scope.taskUpdateLocationBool === false ? true: false;
-
-  }
+  // $scope.updateLocationBool = function(){
+  //   $scope.taskUpdateLocationBool = $scope.taskUpdateLocationBool === false ? true: false;
+  //
+  // }
   $scope.getLocationUpdate = function(datem){
     datem.lat = $scope.currentLat;
     datem.long = $scope.currentLong;
@@ -105,15 +105,15 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     });
   }
 
-  $scope.mapBoolean = false;
-  $scope.showMap = function(){
-    $scope.mapBoolean = $scope.mapBoolean === false ? true: false;
-   }
+  // $scope.mapBoolean = false;
+  // $scope.showMap = function(){
+  //   $scope.mapBoolean = $scope.mapBoolean === false ? true: false;
+  //  }
 
-  $scope.editmode = false;
-  $scope.toggleEditMode = function(){
-    $scope.editmode = $scope.editmode === false ? true: false;
-   }
+  // $scope.editmode = false;
+  // $scope.toggleEditMode = function(){
+  //   $scope.editmode = $scope.editmode === false ? true: false;
+  //  }
 
     $scope.deleteTask = function(datem) {
         console.log(datem.task_id)
@@ -207,9 +207,9 @@ app.controller('DashboardController', function($scope, $http, Auth) {
     $scope.addBoolean = false;
 
     $scope.editBoolean = false;
-    $scope.toggleEdit = function () {
-        $scope.editBoolean = !$scope.editBoolean;
-    };
+    // $scope.toggleEdit = function () {
+    //     $scope.editBoolean = !$scope.editBoolean;
+    // };
     $scope.blurTest = function (){
       console.log('working blur')
     }

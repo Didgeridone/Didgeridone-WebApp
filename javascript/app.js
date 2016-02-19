@@ -1,4 +1,4 @@
-var app = angular.module('didjApp', ['ngRoute', 'ngSanitize']);
+var app = angular.module('didjApp', ['ngRoute', 'ngSanitize', 'ngAnimate']);
 
 app.config(function($routeProvider) {
   $routeProvider
