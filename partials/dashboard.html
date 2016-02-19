@@ -7,8 +7,8 @@
   </h1>
   <input placeholder="search" ng-model="search.text" />
   <div class="tasksBox">
-    <uib-accordion close-others="oneAtATime">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 44.238 44.238" style="enable-background:new 0 0 44.238 44.238;" xml:space="preserve" ng-click="toggleAdd()">
+    <!-- <uib-accordion close-others="oneAtATime"> -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 44.238 44.238" style="enable-background:new 0 0 44.238 44.238;" xml:space="preserve" ng-click="addBoolean = !addBoolean">
         <g>
         	<g>
         		<path d="M22.119,44.237C9.922,44.237,0,34.315,0,22.12C0,9.924,9.922,0.001,22.119,0.001S44.238,9.923,44.238,22.12    S34.314,44.237,22.119,44.237z M22.119,1.501C10.75,1.501,1.5,10.751,1.5,22.12s9.25,20.619,20.619,20.619    s20.619-9.25,20.619-20.619S33.488,1.501,22.119,1.501z" fill="#000000"/>
@@ -21,8 +21,8 @@
         	</g>
         </g>
       </svg>
-    <section id="addTask" ng-show="addBoolean" class="addtaskBox" ng-class="{makingTask: addBoolean}">
-      <form name="addtaskForm" ng-submit="postTask()">
+    <section id="addTask" ng-show="addBoolean" class="addtaskBox animate-show" ng-class="{makingTask: addBoolean}">
+      <form name="addtaskForm" class="animate-show" ng-submit="postTask()" ng-show="addBoolean">
         <label for="taskName">Task Name</label>
         <input class="spacetaskInputs" type="text" ng-model="taskObject.name" name="taskName"></input><br />
         <label>Location<input class="spacetaskInputs" type="search" ng-model="locationInfo" ng-blur="locationTest()"/></label>
@@ -49,7 +49,7 @@
         <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ng-keydown="preventEnter($event)"></h3>
         <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
         <img class="editButton" ng-click="editBoolean = !editBoolean" src="../styles/assets/images/edit.svg">
-        <div ng-show="editBoolean" class="editBox">
+        <div ng-show="editBoolean" class="editBox animate-show">
           <form class="fixformBox">
             <select ng-change="updateTask(datem)" ng-model="datem.enter">
               <option ng-value="false">
@@ -60,7 +60,7 @@
               </option>
             </select>
             <button ng-click="taskUpdateLocationBool = !taskUpdateLocationBool">Show Location</button>
-            <div ng-show="taskUpdateLocationBool">
+            <div ng-show="taskUpdateLocationBool" class="animate-show">
               <label>Location<input type="search" ng-model="datem.locationInfo" ng-blur="locationTestUpdate(datem)"/></label>
               <label><input type="checkbox" ng-click="getLocationUpdate(datem)">Use Current Location</label><br />
 

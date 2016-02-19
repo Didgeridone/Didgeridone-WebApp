@@ -145,6 +145,7 @@ svg {
 .addtaskBox {
 	margin-bottom: 30px;
   border-radius: 10px;
+	// height: 250px;
 }
 
 .spacetaskInputs {
@@ -154,9 +155,9 @@ svg {
 .taskName {
 	margin: 20px;
 	border-radius: 20px;
+	padding: 10px;
 	h3 {
 		display: inline-block;
-		padding: 10px;
 		margin: 10px;
 	}
 }
@@ -301,4 +302,25 @@ footer {
 
 .addtaskForm {
   border-radius: 10px;
+}
+
+
+.taskName.ng-enter {
+	animation: 0.5s fadeInDown;
+
+}
+
+
+.taskName.ng-add {
+	animation: 0.4s fadeOut;
+
+}
+
+.animate-show{
+	animation: 0.5s fadeInDown;
+
+}
+
+.ng-hide {
+	animation: 0.5s fadeOut;
 }

@@ -200,7 +200,7 @@ app.controller('DashboardController', function($scope, $http, Auth) {
               })
       }
 
-    $scope.addBoolean = false;
+    $scope.addBoolean = true;
 
     $scope.toggleAdd = function(){
       if($scope.addBoolean==false){
