@@ -108,10 +108,16 @@ svg {
   margin-bottom: 30px; }
 
 .taskName {
-  margin: 20px; }
+  margin: 20px;
+  border-radius: 20px; }
   .taskName h3 {
     display: inline-block;
-    padding: 10px; }
+    padding: 10px;
+    margin: 10px; }
+
+.editing {
+  margin: 50px;
+  background-color: whitesmoke; }
 
 .tasksBox {
   width: 60%;
@@ -217,5 +223,9 @@ footer {
 
 .makingTask {
   background-color: lightgrey; }
+
+.doneBox {
+  color: black;
+  background-color: black; }
 
 /*# sourceMappingURL=style.css.map */

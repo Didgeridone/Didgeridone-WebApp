@@ -146,17 +146,24 @@ svg {
 
 .taskName {
 	margin: 20px;
+	border-radius: 20px;
 	h3 {
 		display: inline-block;
 		padding: 10px;
+		margin: 10px;
 	}
+}
+
+.editing {
+	margin: 50px;
+	background-color: whitesmoke;
 }
 
 .tasksBox {
 	width: 60%;
 	height: 100%;
 	margin: auto;
-		font-family: $font;
+	font-family: $font;
 	h3:focus {
 		outline: none;
 	}
@@ -270,10 +277,18 @@ height: 15px;
   }
 }
 
+<<<<<<< HEAD
+=======
 footer {
   text-align: center;
 }
 
+>>>>>>> b01a3aeacf354791f41b61de7ab3d937a5f85d64
 .makingTask {
 	background-color: lightgrey;
+}
+
+.doneBox {
+	color: black;
+	background-color: black;
 }
