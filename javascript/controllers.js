@@ -135,10 +135,10 @@ app.controller('DashboardController', function($scope, $http, Auth) {
             $scope.zoomSize = 14;
           }
           else if(datem.radius >= 5 && datem.radius < 10){
-            $scope.zoomSize = 9;
+            $scope.zoomSize = 11;
           }
           else{
-            $scope.zoomSize = 8;
+            $scope.zoomSize = 10;
           }
       console.log(datem)
         $http({
