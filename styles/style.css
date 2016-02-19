@@ -239,7 +239,7 @@ footer {
 .taskName.ng-enter {
   animation: 0.5s fadeInDown; }
 
-.taskName.ng-add {
+.taskName.ng-leave {
   animation: 0.4s fadeOut; }
 
 .animate-show {
