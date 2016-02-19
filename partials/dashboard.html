@@ -44,7 +44,7 @@
     </section>
 
 <!-- Tasks Div  -->
-      <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
+    <div class="taskName" ng-repeat="datem in data | filter:search.text" class="searchBox">
         <input type="checkbox" ng-change="updateTask(datem)" ng-selected="datem.done" ng-model="datem.done" ng-value="true"/>
         <h3 contenteditable="true" ng-model="datem.name" ng-blur="updateTask(datem)" ng-bind-html="datem.name" ></h3>
         <img class="trashCan" src="../styles/assets/images/deleteButton.png" ng-click="deleteTask(datem)">
@@ -64,6 +64,8 @@
             <div ng-show="taskUpdateLocationBool">
               <label>Location<input type="search" ng-model="datem.locationInfo" ng-blur="locationTestUpdate(datem)"/></label>
               <label><input type="checkbox" ng-click="getLocationUpdate(datem)">Use Current Location</label><br />
+              <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{datem.lat}},{{datem.long}}&zoom=12&size=200x200&markers=color:red%7C{{datem.lat}},{{datem.long}}&maptype=roadmap&markers=0.0000,0.0000&sensor=false" ng-show="datem.lat && datem.long">
+
             </div>
             <radiogroup>
               <label>1<input type="radio" ng-change="updateTask(datem)" name="distance" ng-value="1" ng-model="datem.radius"/></label>
@@ -74,14 +76,7 @@
             <button class="" ng-mousedown="updateTask(datem)">Update Task</button>
           </form>
         </div>
-        <iframe
-          width="400"
-          height="300"
-          frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDimfo3HxFf_ToN2hidLHPE78Tz9YifJzI&q=40.7127,74.0059" allowfullscreen>
-        </iframe>
-        <button class="btn btn-sm btn-default" ng-mousedown="updateTask(datem)">Update Task</button>
-        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{taskObject.lat}},{{taskObject.long}}&zoom=5&size=200x200&maptype=roadmap&markers=0.0000,0.0000&sensor=false">
+
     </div>
   </div>
 </div>
