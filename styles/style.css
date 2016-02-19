@@ -88,7 +88,7 @@ header {
     .homeBackground .actionButton a {
       color: #32cd32; }
     .homeBackground .actionButton:hover {
-      background-color: #32cd32; }
+      background-color: rgba(50, 205, 50, 0.75); }
       .homeBackground .actionButton:hover a {
         color: black; }
   .homeBackground .chunk {
